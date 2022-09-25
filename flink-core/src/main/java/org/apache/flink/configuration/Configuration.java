@@ -802,7 +802,16 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	}
 
 
-	// --------------------------------------------------------------------------------------------
+    //Ctest Get Trace
+    private String getStackTrace() {
+    String stacktrace = " ";
+    for (StackTraceElement e : Thread.currentThread().getStackTrace()) {
+      stacktrace = stacktrace.concat(
+          e.getClassName() + "#" + e.getMethodName() + "#" + e.getLineNumber() + "\t");
+    }
+    return stacktrace;
+  }
+    // --------------------------------------------------------------------------------------------
 
 	<T> void setValueInternal(String key, T value) {
 		if (key == null) {
@@ -812,20 +821,29 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 			throw new NullPointerException("Value must not be null.");
 		}
 
-		synchronized (this.confData) {
-			this.confData.put(key, value);
-		}
-	}
+        synchronized (this.confData) {
+			LOG.warn("[CTEST][SET-PARAM] " + key + getStackTrace()); //ctest
+            this.confData.put(key, value);
+        }
+    }
 
-	private Optional<Object> getRawValue(String key) {
-		if (key == null) {
-			throw new NullPointerException("Key must not be null.");
-		}
+    private Optional<Object> getRawValue(String key) {
+        String ctestParam = key;//ctest
+        if (key == null) {
+            throw new NullPointerException("Key must not be null.");
+        }
 
-		synchronized (this.confData) {
-			return Optional.ofNullable(this.confData.get(key));
-		}
-	}
+        synchronized (this.confData) {
+            final Object valueFromExactKey = this.confData.get(key);
+            if (valueFromExactKey != null) {
+                LOG.warn("[CTEST][GET-PARAM] " + ctestParam);//ctest
+                return Optional.ofNullable(valueFromExactKey);
+            } else {
+                LOG.warn("[CTEST][GET-PARAM] " + ctestParam);//ctest
+                return Optional.empty();
+            }
+        }
+    }
 
 	private Optional<Object> getRawValueFromOption(ConfigOption<?> configOption) {
 		// first try the current key

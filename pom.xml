@@ -927,6 +927,14 @@ under the License.
 								</configuration>
 							</execution>
 						</executions>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<configuration>
+              <reportFormat>plain</reportFormat>
+							<systemProperties>
+								<flink.tests.enable-adaptive-scheduler>true</flink.tests.enable-adaptive-scheduler>
+							</systemProperties>
+							<excludedGroups>org.apache.flink.testutils.junit.FailsWithAdaptiveScheduler</excludedGroups>
+						</configuration>
 					</plugin>
 				</plugins>
 			</build>
