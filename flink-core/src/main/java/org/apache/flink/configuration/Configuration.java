@@ -842,10 +842,10 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
         synchronized (this.confData) {
             final Object valueFromExactKey = this.confData.get(key);
             if (valueFromExactKey != null) {
-                LOG.warn("[CTEST][GET-PARAM] " + ctestParam); // ctest
+                LOG.warn("[CTEST][GET-PARAM] " + ctestParam + getStackTrace()); // ctest
                 return Optional.ofNullable(valueFromExactKey);
             } else {
-                LOG.warn("[CTEST][GET-PARAM] " + ctestParam); // ctest
+                LOG.warn("[CTEST][GET-PARAM] " + ctestParam + getStackTrace()); // ctest
                 return Optional.empty();
             }
         }
