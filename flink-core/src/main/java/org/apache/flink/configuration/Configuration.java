@@ -846,9 +846,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
                 return Optional.ofNullable(valueFromExactKey);
             } else {
                 LOG.warn("[CTEST][GET-PARAM] " + ctestParam + getStackTrace()); // ctest
-                return Optional.empty();
-            }
-        }
+				return Optional.empty();
+	        }
+		}
     }
 
 	private Optional<Object> getRawValueFromOption(ConfigOption<?> configOption) {
