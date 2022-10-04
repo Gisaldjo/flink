@@ -834,7 +834,6 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
     }
 
     private Optional<Object> getRawValue(String key) {
-        String ctestParam = key; // ctest
         if (key == null) {
             throw new NullPointerException("Key must not be null.");
         }
@@ -842,10 +841,10 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
         synchronized (this.confData) {
             final Object valueFromExactKey = this.confData.get(key);
             if (valueFromExactKey != null) {
-                LOG.warn("[CTEST][GET-PARAM] " + ctestParam + getStackTrace()); // ctest
+                LOG.warn("[CTEST][GET-PARAM] " + key); // ctest
                 return Optional.ofNullable(valueFromExactKey);
             } else {
-                LOG.warn("[CTEST][GET-PARAM] " + ctestParam + getStackTrace()); // ctest
+                LOG.warn("[CTEST][GET-PARAM] " + key); // ctest
 				return Optional.empty();
 	        }
 		}
