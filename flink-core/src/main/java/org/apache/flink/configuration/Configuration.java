@@ -806,14 +806,7 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
     private String getStackTrace() {
         String stacktrace = " ";
         for (StackTraceElement e : Thread.currentThread().getStackTrace()) {
-            stacktrace =
-                    stacktrace.concat(
-                            e.getClassName()
-                                    + "#"
-                                    + e.getMethodName()
-                                    + "#"
-                                    + e.getLineNumber()
-                                    + "\t");
+            stacktrace = stacktrace.concat(e.getClassName() + "\t");
         }
         return stacktrace;
     }

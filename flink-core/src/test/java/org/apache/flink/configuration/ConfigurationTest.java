@@ -44,31 +44,52 @@ import static org.junit.Assert.fail;
  */
 public class ConfigurationTest extends TestLogger {
 
-	/**
-	 * This test checks the serialization/deserialization of configuration objects.
-	 */
-	@Test
-	public void testConfigurationSerializationAndGetters() {
-		try {
-			final Configuration orig = new Configuration();
-			orig.setString("mykey", "myvalue");
-			orig.setInteger("mynumber", 100);
-			orig.setLong("longvalue", 478236947162389746L);
-			orig.setFloat("PI", 3.1415926f);
-			orig.setDouble("E", Math.E);
-			orig.setBoolean("shouldbetrue", true);
-			orig.setBytes("bytes sequence", new byte[] { 1, 2, 3, 4, 5 });
-			orig.setClass("myclass", this.getClass());
+    private static final ConfigOption<String> STRING_OPTION =
+            ConfigOptions.key("test-string-key").stringType().noDefaultValue();
 
-			final Configuration copy = InstantiationUtil.createCopyWritable(orig);
-			assertEquals("myvalue", copy.getString("mykey", "null"));
-			assertEquals(100, copy.getInteger("mynumber", 0));
-			assertEquals(478236947162389746L, copy.getLong("longvalue", 0L));
-			assertEquals(3.1415926f, copy.getFloat("PI", 3.1415926f), 0.0);
-			assertEquals(Math.E, copy.getDouble("E", 0.0), 0.0);
-			assertEquals(true, copy.getBoolean("shouldbetrue", false));
-			assertArrayEquals(new byte[] { 1, 2, 3, 4, 5 }, copy.getBytes("bytes sequence", null));
-			assertEquals(getClass(), copy.getClass("myclass", null, getClass().getClassLoader()));
+    private static final ConfigOption<List<String>> LIST_STRING_OPTION =
+            ConfigOptions.key("test-list-key").stringType().asList().noDefaultValue();
+
+    private static final ConfigOption<Map<String, String>> MAP_OPTION =
+            ConfigOptions.key("test-map-key").mapType().noDefaultValue();
+
+    private static final ConfigOption<Duration> DURATION_OPTION =
+            ConfigOptions.key("test-duration-key").durationType().noDefaultValue();
+
+    private static final Map<String, String> PROPERTIES_MAP = new HashMap<>();
+
+    static {
+        PROPERTIES_MAP.put("prop1", "value1");
+        PROPERTIES_MAP.put("prop2", "12");
+    }
+
+    private static final String MAP_PROPERTY_1 = MAP_OPTION.key() + ".prop1";
+
+    private static final String MAP_PROPERTY_2 = MAP_OPTION.key() + ".prop2";
+
+    /** This test checks the serialization/deserialization of configuration objects. */
+    @Test
+    public void testConfigurationSerializationAndGetters() {
+        try {
+            final Configuration orig = new Configuration();
+            orig.setString("mykey", "myvalue");
+            orig.setInteger("mynumber", 100);
+            orig.setLong("longvalue", 478236947162389746L);
+            orig.setFloat("PI", 3.1415926f);
+            orig.setDouble("E", Math.E);
+            orig.setBoolean("shouldbetrue", true);
+            orig.setBytes("bytes_sequence", new byte[] {1, 2, 3, 4, 5});
+            orig.setClass("myclass", this.getClass());
+
+            final Configuration copy = InstantiationUtil.createCopyWritable(orig);
+            assertEquals("myvalue", copy.getString("mykey", "null"));
+            assertEquals(100, copy.getInteger("mynumber", 0));
+            assertEquals(478236947162389746L, copy.getLong("longvalue", 0L));
+            assertEquals(3.1415926f, copy.getFloat("PI", 3.1415926f), 0.0);
+            assertEquals(Math.E, copy.getDouble("E", 0.0), 0.0);
+            assertEquals(true, copy.getBoolean("shouldbetrue", false));
+            assertArrayEquals(new byte[] {1, 2, 3, 4, 5}, copy.getBytes("bytes_sequence", null));
+            assertEquals(getClass(), copy.getClass("myclass", null, getClass().getClassLoader()));
 
 			assertEquals(orig, copy);
 			assertEquals(orig.keySet(), copy.keySet());
