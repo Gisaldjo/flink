@@ -135,9 +135,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Returns the value associated with the given key as a string.
 	 *
 	 * @param key
-	 *        the key pointing to the associated value
+	 *		the key pointing to the associated value
 	 * @param defaultValue
-	 *        the default value which is returned in case there is no value associated with the given key
+	 *		the default value which is returned in case there is no value associated with the given key
 	 * @return the (default) value associated with the given key
 	 * @deprecated use {@link #getString(ConfigOption, String)} or {@link #getOptional(ConfigOption)}
 	 */
@@ -178,9 +178,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Adds the given key/value pair to the configuration object.
 	 *
 	 * @param key
-	 *        the key of the key/value pair to be added
+	 *		the key of the key/value pair to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	public void setString(String key, String value) {
 		setValueInternal(key, value);
@@ -191,9 +191,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * The main key of the config option will be used to map the value.
 	 *
 	 * @param key
-	 *        the option specifying the key to be added
+	 *		the option specifying the key to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	@PublicEvolving
 	public void setString(ConfigOption<String> key, String value) {
@@ -204,9 +204,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Returns the value associated with the given key as an integer.
 	 *
 	 * @param key
-	 *        the key pointing to the associated value
+	 *		the key pointing to the associated value
 	 * @param defaultValue
-	 *        the default value which is returned in case there is no value associated with the given key
+	 *		the default value which is returned in case there is no value associated with the given key
 	 * @return the (default) value associated with the given key
 	 * @deprecated use {@link #getInteger(ConfigOption, int)} or {@link #getOptional(ConfigOption)}
 	 */
@@ -248,9 +248,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Adds the given key/value pair to the configuration object.
 	 *
 	 * @param key
-	 *        the key of the key/value pair to be added
+	 *		the key of the key/value pair to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	public void setInteger(String key, int value) {
 		setValueInternal(key, value);
@@ -261,9 +261,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * The main key of the config option will be used to map the value.
 	 *
 	 * @param key
-	 *        the option specifying the key to be added
+	 *		the option specifying the key to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	@PublicEvolving
 	public void setInteger(ConfigOption<Integer> key, int value) {
@@ -274,9 +274,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Returns the value associated with the given key as a long.
 	 *
 	 * @param key
-	 *        the key pointing to the associated value
+	 *		the key pointing to the associated value
 	 * @param defaultValue
-	 *        the default value which is returned in case there is no value associated with the given key
+	 *		the default value which is returned in case there is no value associated with the given key
 	 * @return the (default) value associated with the given key
 	 * @deprecated use {@link #getLong(ConfigOption, long)} or {@link #getOptional(ConfigOption)}
 	 */
@@ -318,9 +318,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Adds the given key/value pair to the configuration object.
 	 *
 	 * @param key
-	 *        the key of the key/value pair to be added
+	 *		the key of the key/value pair to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	public void setLong(String key, long value) {
 		setValueInternal(key, value);
@@ -331,9 +331,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * The main key of the config option will be used to map the value.
 	 *
 	 * @param key
-	 *        the option specifying the key to be added
+	 *		the option specifying the key to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	@PublicEvolving
 	public void setLong(ConfigOption<Long> key, long value) {
@@ -344,9 +344,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Returns the value associated with the given key as a boolean.
 	 *
 	 * @param key
-	 *        the key pointing to the associated value
+	 *		the key pointing to the associated value
 	 * @param defaultValue
-	 *        the default value which is returned in case there is no value associated with the given key
+	 *		the default value which is returned in case there is no value associated with the given key
 	 * @return the (default) value associated with the given key
 	 * @deprecated use {@link #getBoolean(ConfigOption, boolean)} or {@link #getOptional(ConfigOption)}
 	 */
@@ -388,9 +388,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Adds the given key/value pair to the configuration object.
 	 *
 	 * @param key
-	 *        the key of the key/value pair to be added
+	 *		the key of the key/value pair to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	public void setBoolean(String key, boolean value) {
 		setValueInternal(key, value);
@@ -401,9 +401,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * The main key of the config option will be used to map the value.
 	 *
 	 * @param key
-	 *        the option specifying the key to be added
+	 *		the option specifying the key to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	@PublicEvolving
 	public void setBoolean(ConfigOption<Boolean> key, boolean value) {
@@ -414,9 +414,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Returns the value associated with the given key as a float.
 	 *
 	 * @param key
-	 *        the key pointing to the associated value
+	 *		the key pointing to the associated value
 	 * @param defaultValue
-	 *        the default value which is returned in case there is no value associated with the given key
+	 *		the default value which is returned in case there is no value associated with the given key
 	 * @return the (default) value associated with the given key
 	 * @deprecated use {@link #getFloat(ConfigOption, float)} or {@link #getOptional(ConfigOption)}
 	 */
@@ -458,9 +458,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Adds the given key/value pair to the configuration object.
 	 *
 	 * @param key
-	 *        the key of the key/value pair to be added
+	 *		the key of the key/value pair to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	public void setFloat(String key, float value) {
 		setValueInternal(key, value);
@@ -471,9 +471,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * The main key of the config option will be used to map the value.
 	 *
 	 * @param key
-	 *        the option specifying the key to be added
+	 *		the option specifying the key to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	@PublicEvolving
 	public void setFloat(ConfigOption<Float> key, float value) {
@@ -484,9 +484,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Returns the value associated with the given key as a double.
 	 *
 	 * @param key
-	 *        the key pointing to the associated value
+	 *		the key pointing to the associated value
 	 * @param defaultValue
-	 *        the default value which is returned in case there is no value associated with the given key
+	 *		the default value which is returned in case there is no value associated with the given key
 	 * @return the (default) value associated with the given key
 	 * @deprecated use {@link #getDouble(ConfigOption, double)} or {@link #getOptional(ConfigOption)}
 	 */
@@ -528,9 +528,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Adds the given key/value pair to the configuration object.
 	 *
 	 * @param key
-	 *        the key of the key/value pair to be added
+	 *		the key of the key/value pair to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	public void setDouble(String key, double value) {
 		setValueInternal(key, value);
@@ -541,9 +541,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * The main key of the config option will be used to map the value.
 	 *
 	 * @param key
-	 *        the option specifying the key to be added
+	 *		the option specifying the key to be added
 	 * @param value
-	 *        the value of the key/value pair to be added
+	 *		the value of the key/value pair to be added
 	 */
 	@PublicEvolving
 	public void setDouble(ConfigOption<Double> key, double value) {
@@ -554,9 +554,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Returns the value associated with the given key as a byte array.
 	 *
 	 * @param key
-	 *        The key pointing to the associated value.
+	 *		The key pointing to the associated value.
 	 * @param defaultValue
-	 *        The default value which is returned in case there is no value associated with the given key.
+	 *		The default value which is returned in case there is no value associated with the given key.
 	 * @return the (default) value associated with the given key.
 	 */
 	public byte[] getBytes(String key, byte[] defaultValue) {
@@ -576,9 +576,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * Adds the given byte array to the configuration object. If key is <code>null</code> then nothing is added.
 	 *
 	 * @param key
-	 *        The key under which the bytes are added.
+	 *		The key under which the bytes are added.
 	 * @param bytes
-	 *        The bytes to be added.
+	 *		The bytes to be added.
 	 */
 	public void setBytes(String key, byte[] bytes) {
 		setValueInternal(key, bytes);
@@ -600,10 +600,10 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	/**
 	 * Returns the value associated with the given config option as an enum.
 	 *
-	 * @param enumClass    The return enum class
+	 * @param enumClass	The return enum class
 	 * @param configOption The configuration option
 	 * @throws IllegalArgumentException If the string associated with the given config option cannot
-	 *                                  be parsed as a value of the provided enum class.
+	 *								  be parsed as a value of the provided enum class.
 	 */
 	@PublicEvolving
 	public <T extends Enum<T>> T getEnum(
@@ -664,9 +664,9 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 	 * are prepended with the given prefix.
 	 *
 	 * @param other
-	 *        The configuration whose entries are added to this configuration.
+	 *		The configuration whose entries are added to this configuration.
 	 * @param prefix
-	 *        The prefix to prepend.
+	 *		The prefix to prepend.
 	 */
 	public void addAll(Configuration other, String prefix) {
 		final StringBuilder bld = new StringBuilder();
@@ -801,16 +801,15 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 		}
 	}
 
-
-    // Ctest Get Trace
-    private String getStackTrace() {
-        String stacktrace = " ";
-        for (StackTraceElement e : Thread.currentThread().getStackTrace()) {
-            stacktrace = stacktrace.concat(e.getClassName() + "\t");
-        }
-        return stacktrace;
-    }
-    // --------------------------------------------------------------------------------------------
+	// Ctest Get Trace
+	private String getStackTrace() {
+		String stacktrace = " ";
+		for (StackTraceElement e : Thread.currentThread().getStackTrace()) {
+			stacktrace = stacktrace.concat(e.getClassName() + "\t");
+		}
+		return stacktrace;
+	}
+	// --------------------------------------------------------------------------------------------
 
 	<T> void setValueInternal(String key, T value) {
 		if (key == null) {
@@ -820,28 +819,28 @@ public class Configuration extends ExecutionConfig.GlobalJobParameters
 			throw new NullPointerException("Value must not be null.");
 		}
 
-        synchronized (this.confData) {
+		synchronized (this.confData) {
 			LOG.warn("[CTEST][SET-PARAM] " + key + getStackTrace()); // ctest
-            this.confData.put(key, value);
-        }
-    }
-
-    private Optional<Object> getRawValue(String key) {
-        if (key == null) {
-            throw new NullPointerException("Key must not be null.");
-        }
-
-        synchronized (this.confData) {
-            final Object valueFromExactKey = this.confData.get(key);
-            if (valueFromExactKey != null) {
-                LOG.warn("[CTEST][GET-PARAM] " + key); // ctest
-                return Optional.ofNullable(valueFromExactKey);
-            } else {
-                LOG.warn("[CTEST][GET-PARAM] " + key); // ctest
-				return Optional.empty();
-	        }
+			this.confData.put(key, value);
 		}
-    }
+	}
+
+	private Optional<Object> getRawValue(String key) {
+		if (key == null) {
+			throw new NullPointerException("Key must not be null.");
+		}
+
+		synchronized (this.confData) {
+			final Object valueFromExactKey = this.confData.get(key);
+			if (valueFromExactKey != null) {
+				LOG.warn("[CTEST][GET-PARAM] " + key); // ctest
+				return Optional.ofNullable(valueFromExactKey);
+			} else {
+				LOG.warn("[CTEST][GET-PARAM] " + key); // ctest
+				return Optional.empty();
+			}
+		}
+	}
 
 	private Optional<Object> getRawValueFromOption(ConfigOption<?> configOption) {
 		// first try the current key
